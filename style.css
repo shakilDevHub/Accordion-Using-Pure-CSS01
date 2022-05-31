@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+body{
+    width: 100%;
+    min-height: 100vh;
+    font-family: 'Roboto';
+    background: url(bg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    backdrop-filter: blur(5px);
+}
+.wrapper{
+    width: 90%;
+    max-width: 600px;
+    padding-top: 10vh;
+    margin: auto;
+}
+.wrapper ul li{
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 5px 0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+ul li input[type="radio"]{
+    display: none;
+}
+ul li label{
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    cursor: pointer;
+    user-select: none;
+    background-color: rgba(44, 62, 80, 0.95);
+    color: #fff;
+    transition: 0.45s;
+}
+ul li input[type="radio"] ~ label i{
+    transition: 0.45s;
+}
+ul li input[type="radio"]:checked ~ label i{
+    transform: rotate(-180deg);
+}
+ul li input[type="radio"]:hover~ label,
+ul li input[type="radio"]:checked ~ label{
+    background: #18242f;
+}
+.contentWrapper{
+    width: 100%;
+    background: rgba(44, 62, 80, 0.7);
+    color: #fff;
+    font-size: 17px;
+    line-height: 28px;
+    overflow-y: hidden;
+    height: 0;
+    transition: 0.4s;
+}
+.contentWrapper .content{
+    padding: 20px;
+}
+.contentWrapper .content p{
+    padding-bottom: 20px;
+}
+ul li input[type="radio"]:checked ~ .contentWrapper{
+    height: 150px;
+}
+/* Responsive ======================= */
+@media (max-width: 560px){
+    ul li label{
+        font-size: 18px;
+    }
+    .contentWrapper{
+        font-size: 15px;
+    }
+    ul li input[type="radio"]:checked ~ .contentWrapper{
+        height: 200px;
+    }
+}
